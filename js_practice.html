@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 基础练习</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .exercise {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+
+        h2 {
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+
+        .code {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+        }
+
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        .output {
+            background: #e8f5e8;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .instructions {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript 基础练习</h1>
+
+        <!-- 1. 变量定义 -->
+        <div class="exercise">
+            <h2>1. 变量定义</h2>
+            <div class="instructions">
+                <strong>练习：</strong> 点击按钮查看变量定义示例
+            </div>
+            <div class="code">// 变量定义示例
+var name = "小明";      // 使用 var 声明
+let age = 18;          // 使用 let 声明
+const PI = 3.14159;    // 使用 const 声明
+
+console.log("姓名:", name);
+console.log("年龄:", age);
+console.log("圆周率:", PI);</div>
+            <button onclick="exercise1()">运行示例</button>
+            <div class="output" id="output1">点击按钮查看输出...</div>
+        </div>
+
+        <!-- 2. 变量类型 -->
+        <div class="exercise">
+            <h2>2. 变量类型</h2>
+            <div class="instructions">
+                <strong>练习：</strong> 点击按钮查看不同类型的变量
+            </div>
+            <div class="code">// 变量类型示例
+let str = "Hello";     // 字符串
+let num = 123;         // 数字
+let bool = true;        // 布尔值
+let arr = [1, 2, 3];    // 数组
+let obj = {name: "张三", age: 25}; // 对象
+
+console.log("字符串:", str, typeof str);
+console.log("数字:", num, typeof num);
+console.log("布尔值:", bool, typeof bool);
+console.log("数组:", arr, typeof arr);
+console.log("对象:", obj, typeof obj);</div>
+            <button onclick="exercise2()">运行示例</button>
+            <div class="output" id="output2">点击按钮查看输出...</div>
+        </div>
+
+        <!-- 3. 表达式 -->
+        <div class="exercise">
+            <h2>3. 表达式</h2>
+            <div class="instructions">
+                <strong>练习：</strong> 点击按钮查看算术表达式
+            </div>
+            <div class="code">// 表达式示例
+let a = 10;
+let b = 3;
+
+console.log("加法:", a + b);
+console.log("减法:", a - b);
+console.log("乘法:", a * b);
+console.log("除法:", a / b);
+console.log("取余:", a % b);
+console.log("幂运算:", a ** b);</div>
+            <button onclick="exercise3()">运行示例</button>
+            <div class="output" id="output3">点击按钮查看输出...</div>
+        </div>
+
+        <!-- 4. 流程控制 -->
+        <div class="exercise">
+            <h2>4. 流程控制</h2>
+            <div class="instructions">
+                <strong>练习：</strong> 点击按钮查看 if...else 示例
+            </div>
+            <div class="code">// 流程控制示例
+let score = 85;
+
+if (score >= 90) {
+    console.log("优秀");
+} else if (score >= 70) {
+    console.log("良好");
+} else {
+    console.log("及格");
+}
+
+// 循环示例
+console.log("循环输出 1-5:");
+for (let i = 1; i <= 5; i++) {
+    console.log(i);
+}</div>
+            <button onclick="exercise4()">运行示例</button>
+            <div class="output" id="output4">点击按钮查看输出...</div>
+        </div>
+
+        <!-- 5. 函数 -->
+        <div class="exercise">
+            <h2>5. 函数</h2>
+            <div class="instructions">
+                <strong>练习：</strong> 点击按钮查看函数示例
+            </div>
+            <div class="code">// 函数示例
+function greet(name) {
+    return "你好，" + name + "！";
+}
+
+function add(a, b) {
+    return a + b;
+}
+
+console.log(greet("小明"));
+console.log("5 + 3 =", add(5, 3));
+
+// 箭头函数
+const multiply = (a, b) => a * b;
+console.log("4 * 6 =", multiply(4, 6));</div>
+            <button onclick="exercise5()">运行示例</button>
+            <div class="output" id="output5">点击按钮查看输出...</div>
+        </div>
+
+        <!-- 6. 综合练习 -->
+        <div class="exercise">
+            <h2>6. 综合练习</h2>
+            <div class="instructions">
+                <strong>练习：</strong> 输入一个数字，点击按钮查看成绩等级
+            </div>
+            <input type="number" id="scoreInput" placeholder="输入成绩" style="padding: 10px; margin: 10px 0;">
+            <button onclick="exercise6()">计算等级</button>
+            <div class="output" id="output6">输入成绩并点击按钮...</div>
+        </div>
+    </div>
+
+    <script>
+        // 1. 变量定义练习
+        function exercise1() {
+            var name = "小明";
+            let age = 18;
+            const PI = 3.14159;
+            
+            let output = "姓名: " + name + "\n" + 
+                        "年龄: " + age + "\n" + 
+                        "圆周率: " + PI;
+            
+            document.getElementById('output1').textContent = output;
+        }
+
+        // 2. 变量类型练习
+        function exercise2() {
+            let str = "Hello";
+            let num = 123;
+            let bool = true;
+            let arr = [1, 2, 3];
+            let obj = {name: "张三", age: 25};
+            
+            let output = "字符串: " + str + " (" + typeof str + ")\n" +
+                        "数字: " + num + " (" + typeof num + ")\n" +
+                        "布尔值: " + bool + " (" + typeof bool + ")\n" +
+                        "数组: " + arr + " (" + typeof arr + ")\n" +
+                        "对象: " + JSON.stringify(obj) + " (" + typeof obj + ")";
+            
+            document.getElementById('output2').textContent = output;
+        }
+
+        // 3. 表达式练习
+        function exercise3() {
+            let a = 10;
+            let b = 3;
+            
+            let output = "加法: " + (a + b) + "\n" +
+                        "减法: " + (a - b) + "\n" +
+                        "乘法: " + (a * b) + "\n" +
+                        "除法: " + (a / b) + "\n" +
+                        "取余: " + (a % b) + "\n" +
+                        "幂运算: " + (a ** b);
+            
+            document.getElementById('output3').textContent = output;
+        }
+
+        // 4. 流程控制练习
+        function exercise4() {
+            let score = 85;
+            let result = "";
+            
+            if (score >= 90) {
+                result = "优秀\n";
+            } else if (score >= 70) {
+                result = "良好\n";
+            } else {
+                result = "及格\n";
+            }
+            
+            result += "循环输出 1-5:\n";
+            for (let i = 1; i <= 5; i++) {
+                result += i + "\n";
+            }
+            
+            document.getElementById('output4').textContent = result;
+        }
+
+        // 5. 函数练习
+        function exercise5() {
+            function greet(name) {
+                return "你好，" + name + "！";
+            }
+            
+            function add(a, b) {
+                return a + b;
+            }
+            
+            const multiply = (a, b) => a * b;
+            
+            let output = greet("小明") + "\n" +
+                        "5 + 3 = " + add(5, 3) + "\n" +
+                        "4 * 6 = " + multiply(4, 6);
+            
+            document.getElementById('output5').textContent = output;
+        }
+
+        // 6. 综合练习
+        function exercise6() {
+            let score = parseInt(document.getElementById('scoreInput').value);
+            let result = "";
+            
+            if (isNaN(score)) {
+                result = "请输入有效的成绩！";
+            } else if (score < 0 || score > 100) {
+                result = "成绩必须在 0-100 之间！";
+            } else if (score >= 90) {
+                result = "成绩: " + score + " 分，等级: A (优秀)";
+            } else if (score >= 80) {
+                result = "成绩: " + score + " 分，等级: B (良好)";
+            } else if (score >= 70) {
+                result = "成绩: " + score + " 分，等级: C (中等)";
+            } else if (score >= 60) {
+                result = "成绩: " + score + " 分，等级: D (及格)";
+            } else {
+                result = "成绩: " + score + " 分，等级: E (不及格)";
+            }
+            
+            document.getElementById('output6').textContent = result;
+        }
+    </script>
+</body>
+</html>
